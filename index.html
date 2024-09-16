@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Harby - Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="side-panel">
+        <div class="profile-image">
+            <img src="pic.jpg" alt="Mohamed Harby">
+        </div>
+        <div class="header-content">
+            <div id="animated-text"></div>
+        </div>
+    </div>
+
+    <main>
+        <section class="section section-1">
+            <h2>Education</h2>
+            <h3>Bachelors of Computer Engineering, Tanta University</h3>
+            <p>Sept 2018 — June 2023</p>
+            <p><strong> Major: </strong> Electrical Engineering (in-major grade: 76.84%)</p>
+            <p><strong> Certificate (Minor): </strong> Computer Engineering</p>
+            <p><strong> Programming Coursework:</strong>  Data Structures & Algorithms, Databases, Operating System, Networking, Machine Learning.</p>
+        </section>
+
+        <section class="section section-2">
+            <h2>Experience</h2>
+            <div class="experience">
+                <h3>Java Developer, Intern</h3>
+                <p>JobHacker, Cairo, Egypt | Apr. 2023 — Oct. 2023</p>
+                <ul>
+                    <li>Accomplished proficiency in Java, OOP, Databases, Hibernate, and Spring (Boot, Core, MVC, Data, Security).</li>
+                    <li>Achieved competence in utilizing software engineering tools, including UML diagrams and Git.</li>
+                    <li>Gained practical experience in building enterprise-scale Java applications.</li>
+                    <li>Leveraged knowledge in Spring Framework, Databases, Java technologies, and Git.</li>
+                </ul>
+            </div>
+            <div class="experience">
+                <h3>Software Developer, Intern</h3>
+                <p>bld.ai - Openstack team, Remote, USA | Aug. 2022 — Nov. 2022</p>
+                <ul>
+                    <li>Reduced new projects creation and configuration time for developers by developing a projects creation tool with plenty of boilerplate code for their use.</li>
+                    <li>Incorporated Git technologies for building various projects with customized configurations effectively.</li>
+                    <li>Developed a web application and a CLI tool to help developers use the creation tool easily.</li>
+                    <li>Leveraged knowledge in JavaScript, Python, Web development, Git, agile methodologies.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section section-3">
+            <h2>Software Projects</h2>
+            <div class="project">
+                <h3>E-Commerce Microservices application (JobHacker Graduation Project)</h3>
+                <ul>
+                    <li>Designed the SQL database for all services.</li>
+                    <li>Implemented the order service and connected it with other services.</li>
+                    <li>Configured a message broker to send order details to notification service.</li>
+                    <li>Utilized Microservices, Java, Spring boot, Spring JPA, RabbitMQ, and MySQL.</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3>Scouter Search Engine</h3>
+                <ul>
+                    <li>Implemented the crawler part of search engine that crawl web pages with different depth and breadth techniques to guarantee the variety and accuracy of search results.</li>
+                    <li>Utilized Java, and search techniques.</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3>Recommendation System</h3>
+                <ul>
+                    <li>Used hybrid approaches (Content-based filtering and Collaborative filtering) to generate a list of candidate channels to each user.</li>
+                    <li>Used Cosine and Jaccard similarity metrics to generate the candidates.</li>
+                    <li>Increased the coverage by doing exploration and exploitation using Epsilon-Greedy approach.</li>
+                    <li>Utilized Content-based filtering, Collaborative filtering, similarity metrics.</li>
+                </ul>
+            </div>
+            <div class="project">
+                <h3>Sorting Visualizer</h3>
+                <ul>
+                    <li>Developed a C++ application that visualizes common sorting algorithms like merge sort, quick sort, and insertion sort.</li>
+                    <li>Provided interactive visualization of the sorting process, aiding in algorithm understanding and analysis.</li>
+                    <li>Utilized C++, and search algorithms.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section section-4">
+            <h2>Skills</h2>
+            <div class="skills">
+                <ul>
+                    <li><strong>Proficient:</strong> Spring Framework, Java, C++, JavaScript, React, Git, SQL.</li>
+                </ul>
+                <ul>
+                    <li><strong>Familiar:</strong> Python, HTML/CSS, Machine Learning, Front-end tools.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section section-5">
+            <h2>Achievements</h2>
+            <ul>
+                <li>Qualified to the ACPC programming contest 2024.</li>
+                <li>Got the 56th place in ECPC 2023 out of 2400 teams and the 74th place out of 2000 teams in ECPC 2022.</li>
+                <li>Ranked 4th on the 4th day of ECPC Qualification Round 2023.</li>
+            </ul>
+        </section>        
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script>
+        const strings = [
+            "I'm Mohamed Harby^1000\n",
+            "Computer Engineering Fresh Graduate^1000\n",
+            "Java Spring Developer^1000\n",
+            "Machine Learning Enthusist^1000\n",
+            "Competitive Programmer^1000\n"
+        ];
+
+        new Typed('#animated-text', {
+            strings: strings,
+            typeSpeed: 50,
+            backSpeed: 0,
+            fadeOut: true,
+            loop: true,
+            showCursor: false,
+            cursorChar: '|',
+            autoInsertCss: true,
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+</body>
+</html>
