@@ -10,10 +10,11 @@ body {
     flex-direction: column;
 }
 
+
 /* Default Side panel for larger screens */
 .side-panel {
+    height: 100%;
     width: 300px;
-    height: 100vh;
     background-color: #363636;
     position: fixed;
     left: 0;
@@ -23,6 +24,10 @@ body {
     align-items: center;
     justify-content: center;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .profile-image {
@@ -45,18 +50,104 @@ body {
 .header-content {
     text-align: center;
     padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #animated-text {
     font-family: 'Fira Code', monospace;
     color: #F5F5F5;
-    font-size: 1.2rem;
-    min-height: 120px;
+    font-size: 1.1rem;
+    height: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     user-select: none;
 }
+
+
+.contact-details {
+    text-align: left;
+    margin-top: 20px;
+    color: #F5F5F5;
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.contact-details .email {
+    word-break: break-all;
+}
+
+.contact-details *::selection {
+    background-color: #00bfff;
+    color: #2e2e2e;
+}
+
+.contact-details p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    text-wrap: wrap;
+    word-wrap: normal;
+    text-overflow: clip;
+}
+
+
+.contact-details i {
+    margin-right: 10px;
+    color: #F5F5F5;
+    font-size: 1.2rem;
+}
+
+/* Style for the links */
+.contact-details a {
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #00bfff; /* You can adjust this hover color */
+}
+
+/* Responsive adjustments for contact details */
+@media (max-width: 768px) {
+    .contact-details {
+        display: block;
+    }
+    .contact-details p {
+        font-size: 0.9rem;
+    }
+
+    .contact-details i {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-details {
+        display: block;
+    }
+    .contact-details p {
+        font-size: 0.8rem;
+    }
+
+    .contact-details i {
+        font-size: 0.9rem;
+    }
+}
+
 
 /* Main content area */
 main {
@@ -253,5 +344,74 @@ ul {
     .image-album img {
         width: 100px;
         height: 100px;
+    }
+}
+
+
+
+.email-form {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 5px;
+    color: #F5F5F5;
+}
+
+.email-form h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.email-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.email-form input[type="email"],
+.email-form textarea {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e2e2e2;
+}
+
+.email-form textarea {
+    height: 150px;
+}
+
+.email-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #6b6b6b;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.email-form button:hover {
+    background-color: #0088cc;
+}
+
+#form-status {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #00ff00;
+}
+
+@media (max-width: 768px) {
+    .email-form input[type="email"],
+    .email-form textarea {
+        width: 90%;
     }
 }

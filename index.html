@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="config.js"></script> 
 </head>
 <body>
     <div class="side-panel">
@@ -17,6 +18,13 @@
         <div class="header-content">
             <div id="animated-text"></div>
         </div>
+        <div class="contact-details">
+            <p><i class="fas fa-map-marker-alt"></i> 6th of October City, Giza, Egypt</p>
+            <p><i class="fas fa-phone-alt"></i> +20 109 7643 023</p>
+            <p class="email"><i class="fas fa-envelope"></i> <a href="mailto:mohamed.harby.ce@gmail.com" target="_blank">mohamed.harby.ce@gmail.com</a></p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/Mohamed-Harby" target="_blank">github.com/Mohamed-Harby</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/moharby" target="_blank">linkedin.com/in/moharby</a></p>
+        </div>          
     </div>
 
     <main>
@@ -109,7 +117,22 @@
                 <li>Got the 56th place in ECPC 2023 out of 2400 teams and the 74th place out of 2000 teams in ECPC 2022.</li>
                 <li>Ranked 4th on the 4th day of ECPC Qualification Round 2023.</li>
             </ul>
-        </section>        
+        </section>
+        
+        <section class="section section-6">
+            <h2>Contact Me</h2>
+            <div class="email-form">
+                <form id="contact-form">
+                    <input type="email" id="sender-email" name="sender-email" placeholder="Enter your email" required>
+                    
+                    <textarea id="message" name="message" placeholder="Write your message" required></textarea>
+                    
+                    <button type="submit">send</button>
+                </form>
+                <p id="form-status"></p>
+            </div>
+        </section>
+
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -118,7 +141,7 @@
             "I'm Mohamed Harby^1000\n",
             "Computer Engineering Fresh Graduate^1000\n",
             "Java Spring Developer^1000\n",
-            "Machine Learning Enthusist^1000\n",
+            "Machine Learning Enthusiast^1000\n",
             "Competitive Programmer^1000\n"
         ];
 
@@ -134,5 +157,46 @@
         });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+
+
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script> 
+    <script>
+        // Initialize EmailJS
+        emailjs.init({
+            publicKey: config.EMAILJS_PUBLIC_KEY,
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Retrieve form data
+            const senderEmail = document.getElementById('sender-email').value;
+            const message = document.getElementById('message').value;
+
+            // Prepare the email parameters
+            const params = {
+                from_email: senderEmail,
+                message: message,
+            };
+
+            // Send the email using EmailJS
+            emailjs.send(config.EMAILJS_SERVICE_ID, config.EMAILJS_TEMPLATE_ID, params).then(
+            (response) => {
+                document.getElementById('form-status').textContent = "Message sent successfully!";
+                },
+                (error) => {
+                    document.getElementById('form-status').textContent = 'Error sending message.';
+                },
+            );
+
+            // Reset the form
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+
 </body>
 </html>
